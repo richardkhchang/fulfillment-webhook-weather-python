@@ -74,8 +74,6 @@ def makeYqlQuery(req):
     
     if tempscale == "Celsius":
         tempscale = "c"
-    else:
-        tempscale = "f"
     #if temp-scale == "fahrenheit":
     #    temp-scale = "f"
     
