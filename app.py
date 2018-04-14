@@ -71,8 +71,11 @@ def makeYqlQuery(req):
     tempscale = parameters.get("temp-scale")
     if city is None:
         return None
-    #if temp-scale == "celsius":
-    #    temp-scale = "c"
+    
+    if tempscale == "Celsius":
+        tempscale = "c"
+    else:
+        tempscale = "f"
     #if temp-scale == "fahrenheit":
     #    temp-scale = "f"
     
