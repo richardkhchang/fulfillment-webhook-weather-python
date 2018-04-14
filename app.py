@@ -72,12 +72,13 @@ def makeYqlQuery(req):
     if city is None:
         return None
     
+    tc = "f"
     if tempscale == "Celsius":
-        tempscale = "c"
+        tc = "c"
     #if temp-scale == "fahrenheit":
     #    temp-scale = "f"
     
-    return "select * from weather.forecast where u='" + tempscale + "' and woeid in (select woeid from geo.places(1) where text='" + city + "')"
+    return "select * from weather.forecast where u='" + tc + "' and woeid in (select woeid from geo.places(1) where text='" + city + "')"
 
 
 def makeWebhookResult(data, req):
