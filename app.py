@@ -67,7 +67,7 @@ def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
-    #tempscale = parameters.get("temp-scale")
+    tempscale = parameters.get("temp-scale")
     if city is None:
         return None
     #if tempscale is None:
