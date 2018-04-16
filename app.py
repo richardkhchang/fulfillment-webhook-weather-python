@@ -62,24 +62,17 @@ def processRequest(req):
     res = makeWebhookResult(data, req)
     return res
 
-
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     tempscale = parameters.get("temp-scale")
-    if city is None:
-        return None
-    #if tempscale is None:
-    #    return None
+    
     tc = "f"
     if tempscale == "Celsius":
         tc = "c"
-    #if temp-scale == "fahrenheit":
-    #    temp-scale = "f"
     
     return "select * from weather.forecast where u='" + tc + "' and woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
 
 def makeWebhookResult(data, req):
     result = req.get("result")
