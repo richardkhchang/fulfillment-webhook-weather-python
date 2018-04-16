@@ -73,8 +73,8 @@ def makeYqlQuery(req):
     #if tempscale is None:
     #    return None
     tc = "f"
-    #if tempscale == "Celsius":
-    #    tc = "c"
+    if tempscale == "Celsius":
+        tc = "c"
     #if temp-scale == "fahrenheit":
     #    temp-scale = "f"
     
